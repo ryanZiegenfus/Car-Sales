@@ -1,5 +1,5 @@
 import React from 'react';
-import { addItem } from '../action'
+import { addItem } from '../action';
 import { connect } from 'react-redux';
 
 const AdditionalFeature = props => { 
