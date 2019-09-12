@@ -1,3 +1,5 @@
+import { ADD_ITEM, REMOVE_ITEM} from '../action'
+
 const initialState = {
     additionalPrice: 0,
     car: {
@@ -16,8 +18,12 @@ const initialState = {
 }
 
 export const reducer = (state = initialState, action) => {
-    console.log(action)
     switch(action.type) {
+        case ADD_ITEM:
+          console.log("Payload", action.payload);
+          console.log({...state, features: [...state.car.features, action.payload.name]});
+          console.log({...state, car: {...state.car, features: [...state.car.features, action.payload.name]}});
+          return {...state, car: {...state.car, features: [...state.car.features, action.payload]}};
         default:
             return state;
     }
